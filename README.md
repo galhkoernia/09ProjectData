@@ -7,9 +7,6 @@ This project analyzes photovoltaic power generation data and develops a machine 
 The available data contains photovoltaic power generation and weather-related measurements collected across four seasonal datasets:
 
 - Spring 2022-2023
-- Summer 2022-2023
-- Autumn 2022-2023
-- Winter 2022-2023
 
 The project will first perform Exploratory Data Analysis (EDA) on all four datasets before selecting the dataset to be used for machine learning.
 
