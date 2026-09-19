@@ -115,29 +115,31 @@ project/
 ## Workflow
 
 ```text
-Raw Dataset
-     ↓
+Raw Data
+   ↓
 EDA
-     ↓
+   ↓
 Dataset Comparison
-     ↓
+   ↓
 Data Preprocessing
-     ↓
-Processed Dataset
-     ↓
-Feature & Target Preparation
-     ↓
+   ↓
+Feature & Target Selection
+   ↓
 Chronological Train-Test Split
-     ↓
-Random Forest Regression
-     ↓
-Model Evaluation
-     ↓
-Feature Importance
-     ↓
+   ↓
+Random Forest Baseline
+   ↓
+Feature Importance Analysis
+   ↓
+Feature Reduction Experiment
+   ↓
 Hyperparameter Tuning
-     ↓
-Final Model
+   ↓
+Final Model Evaluation
+   ↓
+Model Validation
+   ↓
+Final Random Forest Model
 ```
 
 ---
@@ -282,6 +284,32 @@ Evaluasi dilakukan pada data testing yang dipisahkan berdasarkan urutan waktu.
 
 ---
 
+## Final Model
+
+Model final yang digunakan adalah **Tuned Random Forest Regression** dengan konfigurasi:
+
+```text
+n_estimators      = 500
+max_depth         = 10
+min_samples_split = 5
+min_samples_leaf  = 2
+max_features      = log2
+random_state      = 42
+```
+
+## Model final disimpan pada:
+
+models/random_forest_final.pkl
+
+### Performa final pada test set:
+
+Metric	Result
+MAE	43.0992
+RMSE	80.8455
+R²
+
+---
+
 ## Technology
 
 * Python
@@ -320,23 +348,8 @@ Raw dataset tidak ditimpa oleh hasil preprocessing.
 7. Hasil model merepresentasikan performa pada periode testing yang digunakan dalam eksperimen.
 
 ---
+## License
 
-## Project Status
+This project is licensed under the MIT License.
 
-**Current status: Random Forest modeling and evaluation completed.**
-
-Tahap yang telah dilakukan:
-
-* EDA
-* Dataset comparison
-* Data preprocessing
-* Feature and target preparation
-* Chronological train-test split
-* Random Forest baseline
-* Model evaluation
-* Feature importance
-* Permutation importance
-* Feature reduction experiment
-* Hyperparameter tuning
-
-Tahap selanjutnya adalah validasi tuned model dan finalisasi hasil eksperimen.
+See the [LICENSE](LICENSE) file for details.
